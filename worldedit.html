@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<textarea>test</textarea>
+<br>
+<input type="button" id="load" value="Load Existing" onclick="document.getElementById('file').click();" />
+<input type="file" style="display:none;" id="file" name="file" accept="application/json" />
+<script>
+const fileInput = document.getElementById('file');
+fileInput.onchange = () => {
+  const selectedFile = fileInput.files[0];
+  const reader = new FileReader();
+  reader.readAsDataURL(selectedFile);
+}
+</script>
+</body>
+</html>
